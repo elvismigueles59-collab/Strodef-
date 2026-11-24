@@ -1,15 +1,29 @@
 import cv2
 import numpy as np
+import json
+import os
 
-def detectar_personas(ruta_imagen, umbral_confianza=0.5):
-    net = cv2.dnn.readNetFromTFLite("yolov8n.tflite")
+def cargar_configuracion():
+    # Si el archivo existe, lo lee. Si no, usa valores por defecto.
+    if os.path.exists("config.json"):
+        with open("config.json", "r") as f:
+            return json.load(f)
+    return {"umbral_confianza": 0.5, "camara_id": 0, "tiempo_espera_segundos": 3}
+
+def detectar_personas(ruta_imagen, umbral_confianza=None):
+    config = cargar_configuracion()
     
+    # Si no le pasamos un umbral manual, usamos el del archivo config.json
+    if umbral_confianza is None:
+        umbral_confianza = config.get("umbral_confianza", 0.5)
+
+    net = cv2.dnn.readNetFromTFLite("yolov8n.tflite")
     image = cv2.imread(ruta_imagen)
+    
     if image is None:
         return "Error: No se pudo leer la imagen."
         
     height, width = image.shape[:2]
-    
     blob = cv2.dnn.blobFromImage(image, 1/255.0, (640, 640), swapRB=True, crop=False)
     net.setInput(blob)
     outputs = net.forward()
@@ -28,7 +42,6 @@ def detectar_personas(ruta_imagen, umbral_confianza=0.5):
             center_y = int(detection[1] * height)
             w = int(detection[2] * width)
             h = int(detection[3] * height)
-            
             x = int(center_x - w / 2)
             y = int(center_y - h / 2)
             
@@ -36,8 +49,8 @@ def detectar_personas(ruta_imagen, umbral_confianza=0.5):
             confidences.append(float(confidence))
             
     indices = cv2.dnn.NMSBoxes(boxes, confidences, umbral_confianza, 0.4)
-    
     personas_encontradas = []
+    
     if len(indices) > 0:
         for i in indices.flatten():
             personas_encontradas.append({
