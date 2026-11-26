@@ -1,3 +1,12 @@
 [2026-11-24 15:13:30] ALERTA: 1 persona(s) detectada(s).
 [2026-11-26 10:45:02] ALERTA TÉRMICA: 1 persona(s) detectada(s).
 [2026-11-26 10:45:21] ALERTA TÉRMICA: 1 persona(s) detectada(s).
+[2026-11-26 11:09:18] ALERTA: 1 persona(s). Área: 85.0%
+[2026-11-26 11:11:03] ALERTA: 1 persona(s). Área: 5.2%
+[2026-11-26 11:11:10] ALERTA: 1 persona(s). Área: 4.9%
+[2026-11-26 11:11:24] ALERTA: 1 persona(s). Área: 75.7%
+[2026-11-26 11:11:30] ALERTA: 1 persona(s). Área: 78.4%
+[2026-11-26 15:50:23] ALERTA: 3 persona(s). Área: 19.1%
+[2026-11-26 15:50:35] ALERTA: 1 persona(s). Área: 0.9%
+[2026-11-26 15:50:47] ALERTA: 1 persona(s). Área: 0.7%
+[2026-11-26 15:50:59] ALERTA: 4 persona(s). Área: 7.8%
