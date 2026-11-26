@@ -10,3 +10,10 @@
 [2026-11-26 15:50:35] ALERTA: 1 persona(s). Área: 0.9%
 [2026-11-26 15:50:47] ALERTA: 1 persona(s). Área: 0.7%
 [2026-11-26 15:50:59] ALERTA: 4 persona(s). Área: 7.8%
+[2026-11-26 16:37:17] ALERTA: 1 persona(s). Área: 9.9%
+[2026-11-26 16:37:28] ALERTA: 1 persona(s). Área: 7.6%
+[2026-11-26 16:37:40] ALERTA: 1 persona(s). Área: 3.7%
+[2026-11-26 16:38:16] ALERTA: 1 persona(s). Área: 4.4%
+[2026-11-26 16:38:28] ALERTA: 1 persona(s). Área: 5.0%
+[2026-11-26 16:46:58] ALERTA: 1 persona(s). Área: 35.1%
+[2026-11-26 16:47:09] ALERTA: 1 persona(s). Área: 35.1%
